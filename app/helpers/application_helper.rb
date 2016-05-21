@@ -1,5 +1,5 @@
 module ApplicationHelper
   def get_title(title)
-    "#{title} | UCBTweet"
+    title.empty? ? "UCBTweet" : "#{title} | UCBTweet"
   end
 end
