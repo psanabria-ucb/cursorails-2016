@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
@@ -14,5 +13,12 @@ class SessionsController < ApplicationController
       flash[:danger] = 'Email or password are incorrect'
       render 'new'
     end
+  end
+
+  def destroy
+    if logged_in?
+      logout
+    end
+    redirect_to root_url
   end
 end
